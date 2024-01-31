@@ -27,14 +27,12 @@ def analyze_images(images):
     for image_data in images:
         nparr = np.frombuffer(image_data[0], np.uint8)
         image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-        # Perform analysis on the image (e.g., object detection, image processing, etc.)
-        # Example: display the image
         cv2.imshow("Image", image)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
 def select_images():
     root = Tk()
-    root.withdraw()  # Hide the main window
+    root.withdraw() 
 
     file_paths = filedialog.askopenfilenames(title="Select Images", filetypes=[("Image files", "*.jpg;*.jpeg;*.png")])
 
